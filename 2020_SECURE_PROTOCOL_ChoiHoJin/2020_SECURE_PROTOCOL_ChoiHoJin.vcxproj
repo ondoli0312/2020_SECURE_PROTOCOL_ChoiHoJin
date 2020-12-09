@@ -132,12 +132,11 @@
   <ItemGroup>
     <ClCompile Include="AES.c" />
     <ClCompile Include="ARIA.c" />
-    <ClCompile Include="MCT_MMT.c" />
+    <ClCompile Include="MCT.c" />
     <ClCompile Include="Basic_Function.c" />
     <ClCompile Include="LEA.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="Mode_of_Operation.c" />
-    <ClCompile Include="MOV_Test.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

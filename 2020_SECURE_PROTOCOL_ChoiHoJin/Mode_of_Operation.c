@@ -203,7 +203,7 @@ void CFB(DATA* A) {
 
 	A->Enc(IV, A->Key, temp, A->keyLen);
 	for (int j = 0; j < 16; j++) {
-		A->CT[j + (16 * i)] = A->Msg[j + (16 * i)] ^ temp[j];
+		A->CT[j + (16 * i)] = A->final_Msg[j] ^ temp[j];
 	}
 
 }
@@ -214,7 +214,6 @@ void OFB(DATA* A) {
 	int i = 0;
 
 	memcpy(IV, A->IV, 16);
-
 	for (i = 0; i < A->msgLen / 16; i++) {
 		A->Enc(IV, A->Key, ct_temp, A->keyLen);
 		for (int j = 0; j < 16; j++) {
@@ -267,27 +266,3 @@ void CTR(DATA* A) {
 	}
 }
 
-//void main()
-//{
-//	DATA* A = NULL;
-//	A = (DATA*)malloc(sizeof(DATA));
-//	A->Msg = (u8*)calloc(16, sizeof(u8));
-//	A->CT = (u8*)calloc(32, sizeof(u8));
-//	A->Key = (u8*)calloc(16, sizeof(u8));
-//	unsigned char pt0[16] = { 0x93, 0x0c, 0x24, 0x48, 0xc8, 0xf6, 0x0f, 0xc7, 0xc2, 0xd6, 0x3d, 0x12, 0xab, 0x07, 0x2f, 0xee };
-//	unsigned char key0[16] = { 0x50, 0x52, 0xda, 0x88, 0xdd, 0x2f, 0xfa, 0x45, 0x8d, 0xac, 0x1f, 0x46, 0x7e, 0x3d, 0x7a, 0x44 };
-//	for (int i = 0; i < 16; i++) {
-//		A->IV[i] = i;
-//	}
-//	A->ctLen = 32;
-//	A->keyLen = 16;
-//	A->msgLen = 16;
-//	A->Enc = ARIA;
-//	memcpy(A->Msg, pt0, 16);
-//	memcpy(A->Key, key0, 16);
-//	CTR(A);
-//	for (int i = 0; i < 32; i++) {
-//		printf("%02x ", A->CT[i]);
-//	}
-//
-//}

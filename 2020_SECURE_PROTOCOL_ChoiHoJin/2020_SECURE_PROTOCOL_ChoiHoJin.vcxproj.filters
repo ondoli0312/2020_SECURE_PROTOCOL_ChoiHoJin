@@ -44,16 +44,13 @@
     <ClCompile Include="AES.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="MOV_Test.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Mode_of_Operation.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="main.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="MCT_MMT.c">
+    <ClCompile Include="MCT.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
